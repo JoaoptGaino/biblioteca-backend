@@ -1,9 +1,11 @@
 import express from "express";
-
+import cors from "cors";
+import routes from "./routes";
+const PORT = 3030;
 const app = express();
-
+app.use(cors());
 app.use(express.json());
-
-app.listen(3030, () => {
-  console.log("Listening to 3030");
+app.use(routes);
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`Listening to ${PORT}`);
 });
