@@ -5,10 +5,6 @@ const books = new BooksController();
 
 routes.post("/obras", books.create);
 routes.get("/obras", books.index);
-routes.get("/", (req, res) => {
-  return res.json({
-    message: "Hello",
-  });
-});
-
+routes.put("/obras/:id", books.update);
+routes.delete("/obras/:id", books.remove);
 export default routes;
